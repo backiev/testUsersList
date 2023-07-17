@@ -11,7 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
-src/data/generated.json
+
 
 # Editor directories and files
 .vscode/*
@@ -23,3 +23,4 @@ src/data/generated.json
 *.njsproj
 *.sln
 *.sw?
+src/data/generated.json

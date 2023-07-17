@@ -1,10 +1,13 @@
 import userImage from '../assets/userImage.png';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import { changeField } from '../app/UsersSlice';
+
 
 
 // eslint-disable-next-line react/prop-types
 export const UserInfo = ({userId}) => {
    const user = useSelector(state => state.users.users[userId]);
+   const dispatch = useDispatch();
    console.log(user);
   return (
    <div className='user'>
@@ -18,23 +21,48 @@ export const UserInfo = ({userId}) => {
       <div className='user-info__inputs'>
          <div className='user-info__inputs-item'>
             <div>id</div>
-            <input />
+            <input value={user.id} disabled />
          </div>
          <div className='user-info__inputs-item'>
             <div>Имя</div>
-            <input />
+            <input value={user.firstName} 
+               onChange={(e) => dispatch(changeField({
+                  userId: userId,
+                  property: 'firstName',
+                  value: e.target.value
+               }))}
+            />
          </div>
          <div className='user-info__inputs-item'>
             <div>Фамилия</div>
-            <input />
+            <input value={user.lastName} 
+               onChange={(e) => dispatch(changeField({
+                  userId: userId,
+                  property: 'lastName',
+                  value: e.target.value
+               }))}
+            />
          </div>
          <div className='user-info__inputs-item'>
             <div>Возраст</div>
-            <input />
+            <input value={user.age} 
+               onChange={(e) => dispatch(changeField({
+                  userId: userId,
+                  property: 'age',
+                  value: e.target.value
+               }))}
+            />
          </div>
          <div className='user-info__inputs-item'>
             <div>Почта</div>
-            <input />
+            <input 
+               value={user.email} 
+               onChange={(e) => dispatch(changeField({
+                  userId: userId,
+                  property: 'email',
+                  value: e.target.value
+               }))}
+            />
          </div>
       </div>
       </div>

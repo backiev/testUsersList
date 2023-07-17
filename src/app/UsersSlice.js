@@ -5,11 +5,18 @@ import data from '../data/generated.json'
 const usersSlice = createSlice({
     name: 'users',
     initialState: {
-        users: data
+        users: data.slice(0, 50)
     },
-    reducers: {}
+    reducers: {
+        changeSlice: (state, action) => {
+            state.users = data.slice(0, action.payload)
+        },
+        changeField: (state, {payload: {userId, property, value}}) => {
+            state.users[userId][property] = value;
+        }
+    }
 });
 
-// export const {} = usersSlice.actions;
+export const {changeSlice, changeField} = usersSlice.actions;
 
 export default usersSlice.reducer;
