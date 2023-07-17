@@ -1,4 +1,4 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 import './App.css'
 import './styles/main.sass'
 import {Lists} from './components/Lists'
@@ -6,11 +6,14 @@ import {UserInfo} from './components/UserInfo'
 
 
 function App() {
-
+  const [userId, setUserId] = useState(0);
+  const changeUserId = (id) => {
+    setUserId(id);
+  }
   return (
     <div className='wrapper'>
-      <Lists />
-      <UserInfo />
+      <Lists changeUserId={changeUserId} />
+      <UserInfo userId={userId} />
     </div>
   )
 }

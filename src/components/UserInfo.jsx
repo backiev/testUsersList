@@ -1,10 +1,15 @@
-import userImage from '../assets/userImage.png'
+import userImage from '../assets/userImage.png';
+import {useSelector} from 'react-redux';
 
-export const UserInfo = () => {
+
+// eslint-disable-next-line react/prop-types
+export const UserInfo = ({userId}) => {
+   const user = useSelector(state => state.users.users[userId]);
+   console.log(user);
   return (
    <div className='user'>
       <div className='user-header'>
-         <div className='user-header__name'>Пользователь 1</div>
+         <div className='user-header__name'>Пользователь {userId + 1}</div>
       </div>
       <div className='user-info'>
          <div className='user-info__image'>
