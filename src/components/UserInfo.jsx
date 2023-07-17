@@ -8,7 +8,6 @@ import { changeField } from '../app/UsersSlice';
 export const UserInfo = ({userId}) => {
    const user = useSelector(state => state.users.users[userId]);
    const dispatch = useDispatch();
-   console.log(user);
   return (
    <div className='user'>
       <div className='user-header'>

@@ -6,6 +6,7 @@ import {UserInfo} from './components/UserInfo'
 
 
 function App() {
+  // Выбранный пользователь из списка всех пользователей
   const [userId, setUserId] = useState(0);
   const changeUserId = (id) => {
     setUserId(id);

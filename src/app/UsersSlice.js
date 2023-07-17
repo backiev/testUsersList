@@ -8,9 +8,11 @@ const usersSlice = createSlice({
         users: data.slice(0, 50)
     },
     reducers: {
+        // Изменение количества пользователей, для оптимизации рендеринга списка
         changeSlice: (state, action) => {
             state.users = data.slice(0, action.payload)
         },
+        // Обработка инпутов
         changeField: (state, {payload: {userId, property, value}}) => {
             state.users[userId][property] = value;
         }
