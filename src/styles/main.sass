@@ -1,0 +1,42 @@
+.wrapper
+   display: flex
+   height: 100vh
+   .lists
+      flex-basis: 30%
+      background: #000
+      height: 100%
+      &-user
+         display: flex
+         padding-top: 10px
+         margin-left: 10px
+         &__icon
+            margin-right: 10px
+   .user
+      flex-grow: 1
+      &-header
+         padding: 10px 15px
+         background-color: lighten(blue, 20)
+         &__name
+            padding: 10px 60px
+            border: 1px solid lighten(blue, 30)
+      &-info 
+         padding: 0 15px
+         margin-top: 15px 
+         display: flex
+         gap: 20px
+
+
+         &__inputs
+            width: 100%
+            // background-color: black
+            &-item
+               display: flex
+               margin-top: 5px
+               div
+                  flex-basis: 15%
+               input 
+                  flex-grow: 1
+                  outline: none
+         &__image
+            &-item 
+               max-width: 130px

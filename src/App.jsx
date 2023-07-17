@@ -1,16 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import { useState } from 'react'
 import './App.css'
+import './styles/main.sass'
+import {Lists} from './components/Lists'
+import {UserInfo} from './components/UserInfo'
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>1</div>
-      <div>2</div>
-    </>
+    <div className='wrapper'>
+      <Lists />
+      <UserInfo />
+    </div>
   )
 }
 
